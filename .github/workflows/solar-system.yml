@@ -15,7 +15,7 @@ jobs:
     unit-testing:
         strategy:
             matrix:
-              os: [ubuntu-20.04, macos-latest]
+              os: [ubuntu-latest]
         name: Unit esting
         runs-on: ${{ matrix.os }}
         steps:

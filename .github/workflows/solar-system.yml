@@ -6,12 +6,16 @@ on:
     branches: 
         - main
         - 'feature/*'
+ 
 env:
     MONGO_URI: 'mongodb+srv://supercluster.d83jj.mongodb.net/superdata'
     MONGO_USERNAME: ${{ vars.MONGO_USERNAME }}
     MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
 jobs:
     unit-testing:
+        strategy:
+            matrix:
+              os: [ubuntu-20.04, macos-latest]
         name: Unit esting
         runs-on: ubuntu-latest
         steps:

@@ -33,14 +33,15 @@ jobs:
             - name: Install Dependencies
               run: npm install
             - name: Unit Testing
-              continue-on-error: true
+              id: nodejs-testing-steps
               run: npm run test
             
             - name: Archive test Result
+              if: steps.nodejs-testing-steps.outcome=='failure' || steps.nodejs-testing-steps.outcome=='Success'
               uses: actions/upload-artifact@v3
               with:
                 name: Mocha-Test-Result
-                path: test-result.xml
+                path: test-results.xml
     
     code-coverage:
         name: Code Coverage

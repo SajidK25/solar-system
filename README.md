@@ -47,3 +47,6 @@ If the installation was successful, you should be able to run the following comm
 ## Access Application on Browser
     http://localhost:3000/
 
+
+
+<!-- Security scan triggered at 2026-09-05 07:53:27 -->
